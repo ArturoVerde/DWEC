@@ -21,7 +21,7 @@ var numero = new Number(35248.0125478);
 //Los valores menores que MIN_VALUE son convertidos a 0.
 function comprobarNumero2(numero){
   if (numero >= Number.MIN_VALUE){
-	  document.write("El número es mayor que cero");
+	  document.write("El número es mayor que cero"+"<br>"+numero.toPrecision(8));
   }
     else{
 	  document.write("Es igual a cero");
