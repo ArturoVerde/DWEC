@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ejemplo3</title>
+</head>
+<body>
+  <script>
+    function exponencial(){
+      var x=new Number(47.54265);
+        //toExponential permite representar un numero en representacion exponencial
+        document.write("el numero en notacion exponencial:"+x.toExponential(2)+"</p>");
+    }
+    exponencial();
+  </script>
+  <script>
+    function  comprobarNumero(){
+      var numero1=new Number(-1.79E+309);
+      var numero2=new Number(1.79E+309);
+      if (numero1==Number.NEGATIVE_INFINITY) {
+        document.write("numero1 es  -infinito"+"</p>");
+
+      }
+     if (numero2==Number.POSITIVE_INFINITY) {
+        document.write("numero2 es infinito "+"</p>")
+
+      }
+    }
+    comprobarNumero();
+  </script>
+</body>
+</html>

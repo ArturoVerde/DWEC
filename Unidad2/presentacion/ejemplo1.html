@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8">
+     <title>Ejemplo 1</title>
+   </head>
+   <body>
+<script type="text/javascript">
+var numero = new Number(35248.0125478);
+//MAX_VALUE representa el valor numérico positivo máximo representable en JavaScript con un valor aproximado a 1.79E+308.
+  //Si el valor es mayor será representado como Infinity.
+  function comprobrarNumero(numero){
+	if (numero <= Number.MAX_VALUE){
+	  document.write("El número no es infinito"+"<br>"+numero.toFixed(5)+"<br>");
+  }
+    else{
+	  document.write("El número es infinito");
+  	}
+}
+//MIN_VALUE es el número más cercano a 0, no el más negativo, que JavaScript puede representar. tiene un valor aproximado de 5e-324.
+//Los valores menores que MIN_VALUE son convertidos a 0.
+function comprobarNumero2(numero){
+  if (numero >= Number.MIN_VALUE){
+	  document.write("El número es mayor que cero");
+  }
+    else{
+	  document.write("Es igual a cero");
+  	}
+}
+</script>
+<script type="text/javascript">
+  comprobrarNumero(numero);
+  comprobarNumero2(numero);
+</script>
+   </body>
+ </html>
