@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ejercicio2</title>
+
+    <script type="text/javascript">
+    function Puntuar(){
+      var palabras=new Array();
+      var puntos=0;
+      palabras=formulario.texto.value.split(" ");
+      for (var i = 0; i < palabras.length; i++) {
+        if (palabras[i].charAt(0)==minusculas[aleatoria]) {
+          puntos++;
+        }
+      }
+      var ventana= window.open("","", "width=200,heigth=100");
+      ventana.document.write("Has conseguido"+puntos)
+      ventana.document.write('<meta charset="utf-8">');
+    }
+    </script>
+    <style media="screen">
+      textarea input{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 2px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Manipular Arrays</h1>
+    <form name="formulario">
+      <p>
+        <script type="text/javascript">
+            var minusculas=new Array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u',
+            'v','w','x','y','z');
+            var aleatoria= Math.floor(Math.random()*25+1);
+            document.write("introduce algunas palabras que empiecen por:"+minusculas[aleatoria]);
+            function Puntuar(){
+              var ventana= window.open("","", "width=300,heigth=200");
+              ventana.document.write('<meta charset="utf-8">');
+              var palabras=new Array();
+              var puntos=0;
+              palabras=formulario.texto.value.split(" ");
+              for (var i = 0; i < palabras.length; i++) {
+                if (palabras[i].charAt(0)==minusculas[aleatoria]) {
+                  puntos++;
+                }
+                else {
+                  puntos=0;
+                  ventana.document.write("Game Over <br>");
+                  ventana.document.write("Fallaste:"+palabras[i]+"<br>");
+                }
+              }
+              ventana.document.write("Tienes "+puntos+" puntos")
+            }
+        </script>
+      </p>
+
+      <textarea name="texto" rows="3" cols="40"></textarea>
+      <input type="button" name="boton" value="Aceptar" onclick="Puntuar()">
+    </form>
+
+  </body>
+</html>

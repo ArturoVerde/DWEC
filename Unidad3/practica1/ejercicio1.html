@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ejercicio1</title>
+  <script type="text/javascript">
+  function Contar() {
+    var palabras=new Array();
+    var larga;
+    var corta;
+    max=0;
+    min=Number.MAX_VALUE;
+    palabras=formulario.texto.value.split(" ");
+    for (var i = 0; i < palabras.length; i++) {
+      if (palabras[i].length>max) {
+        max=palabras[i].length;
+        larga=palabras[i];
+      }
+      if (palabras[i].length<min) {
+        min=palabras[i].length;
+        corta=palabras[i];
+      }
+    }
+    console.log(palabras);
+    var ventana= window.open("","", "width=300,heigth=200");
+    ventana.document.write('<meta charset="utf-8">');
+    ventana.document.write('<b>Primera palabra</b> '+palabras[0]);
+    ventana.document.write('<br><b>Ultima palabra</b> '+palabras[palabras.length-1]);
+    ventana.document.write('<br><b>Palabra mas larga</b> '+larga);
+    ventana.document.write('<br><b>Palabra mas corta</b> '+corta);
+    ventana.document.write('<br><b>Orden alfabetico</b> '+palabras.sort().join('-'));
+    ventana.document.write('<br><b>Numero de palabras</b> '+palabras.length);
+  }
+  </script>
+  <style media="screen">
+  textarea input{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 2px;
+  }
+  </style>
+</head>
+<body>
+  <h1>Manipular Arrays</h1>
+  <form name="formulario">
+    <p>
+      Introduce algunas palabras
+    </p>
+    <textarea name="texto" rows="3" cols="40"></textarea>
+    <br>
+    <input type="button" name="boton" value="Aceptar" onclick="Contar()">
+  </form>
+
+</body>
+</html>
